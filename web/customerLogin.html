@@ -14,11 +14,11 @@ and open the template in the editor.
         <div>
             <h1>Login</h1>
             <p>Hello ! please enter your details below</p>
-            <form>
+            <form action="LoginCustomerServlet.do" method="POST">
                 <table>
                     <tr>
                         <td>UserName or email</td>
-                        <td><input type="text" name ="name" placeholder=" Username or password "/></td>
+                        <td><input type="text" name ="name" placeholder=" Username or email "/></td>
                     </tr>
                     
                     <tr>
@@ -28,7 +28,7 @@ and open the template in the editor.
                     
                     <tr>
                         <td></td>
-                        <td><input type="button" value ="Login" placeholder=/></td>
+                        <td><input type="submit" value ="Login" placeholder=/></td>
                     </tr>
                 </table>
             </form>

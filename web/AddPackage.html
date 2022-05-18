@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Add auto details Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h1>Add Package</h1>
+            <form action="AddPackageServlet.do" method="POST">
+                <table>
+                    <tr>
+                        <td>Package ID:</td>
+                        <td><input type="text" name ="packageId" placeholder="service name"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>service name:</td>
+                        <td><input type="text" name ="serviceName" placeholder="service name"></td>
+                    </tr>
+                    
+                     <tr>
+                        <td>cars Price:</td>
+                        <td><input type="text" name ="priceCars" placeholder="price of cars"></td>
+                    </tr>
+                    
+                     <tr>
+                        <td>small/mid (SUV,VAN) Price:</td>
+                        <td><input type="text" name ="suvPrice" placeholder="price of small or mid suv"></td>
+                    </tr>
+                    
+                     <tr>
+                        <td>LARGE (SUV,VAN,TRUCK) Price:</td>
+                        <td><input type="text" name ="largePrice" placeholder="price of large cars"></td>
+                    </tr>
+                    
+                     <tr>
+                        <td></td>
+                        <td><input type="submit" name ="ADD PACKAGE"/></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import za.ac.tut.business.CustomerFacadeLocal;
 import za.ac.tut.entities.Address;
 import za.ac.tut.entities.Customer;
@@ -22,14 +23,14 @@ import za.ac.tut.entities.Customer;
  *
  * @author Proline
  */
-public class CreateServlet extends HttpServlet {
+public class CreateUserAccountServlet extends HttpServlet {
 
     @EJB
     private CustomerFacadeLocal customerFacade;
 
-
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
-     * Handles the HTTP <code>POST</code> method.
+     * Handles the HTTP <code>GET</code> method.
      *
      * @param request servlet request
      * @param response servlet response
@@ -37,30 +38,32 @@ public class CreateServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       //get the details from the request object
-       Long customerId =Long.parseLong(request.getParameter("id"));
-       String name=request.getParameter("name");
-       String lastName=request.getParameter("lastName");
-       String email=request.getParameter("email");
-       String password=request.getParameter("passwd");
-       String  cellNum=request.getParameter("cellNum");
-       String streetNumber=request.getParameter("streetNum");
-       String streetName=request.getParameter("steetName");
-       String area=request.getParameter("area");
-       String code=request.getParameter("code");
-       //generate
-       Customer custs=generate(customerId,name,lastName,email,password,cellNum,streetNumber,streetName,area,code);
-       //
-       customerFacade.createCustomers(custs);
-       //
+        //
+        HttpSession session=request.getSession();
+       //get user info from the session
+       Long customerId =(Long)session.getAttribute("id");
+       String name=(String)session.getAttribute("name");
+       String lastName=(String)session.getAttribute("lastName");
+       String email=(String)session.getAttribute("email");
+       String password=(String)session.getAttribute("passwd");
+       String  cellNum=(String)session.getAttribute("cellNum");
+       String streetNumber=(String)session.getAttribute("streetNum");
+       String streetName=(String)session.getAttribute("steetName");
+       String area=(String)session.getAttribute("area");
+       String code=(String)session.getAttribute("code");
+      //
+      Customer customers=generate(customerId,name,lastName,email,password,cellNum,streetNumber,streetName,area,code);
+      //
+      customerFacade.createCustomers(customers);
+      
        RequestDispatcher disp= request.getRequestDispatcher("CreateCustomerOutcome.jsp");
        disp.forward(request, response);
     }
 
     private Customer generate(Long customerId, String name, String lastName, String email, String password, String cellNum, String streetNumber, String streetName, String area, String code) {
-        Address addrs=new Address();
+          Address addrs=new Address();
         //
         addrs.setStreetNum(streetNumber);
         addrs.setStreetName(streetName);
@@ -77,8 +80,10 @@ public class CreateServlet extends HttpServlet {
         custs.setCellPhone(cellNum);
         custs.setCreationDate(creationDate);
         custs.setAddrs(addrs);
+        //
+       return custs;
         
-        return custs;
     }
+
 
 }

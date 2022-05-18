@@ -13,8 +13,15 @@
     </head>
     <body>
         <h1>Customers Page</h1>
-        <p>
-            your account has been created successfully please click <a href="">Booking</a>to start Booking
+          <p>
+            your account has been created successfully please click <a href="booking.html">Booking Now</a>to start Booking
         </p>
+         <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="">About us</a></li>
+              <li><a href="">Contact Us</a></li>
+              <li><a href="">Work</a></li>
+        </ul>
+        
     </body>
 </html>

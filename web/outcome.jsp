@@ -9,14 +9,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <link rel="stylesheet"  href="AmountOutcome.css">
         <title>outcome  Page</title>
     </head>
     <body>
+        <div class ="container">
         <h1>outcome</h1>
         <%
           String name=(String)session.getAttribute("name");
           Double amountDue=(Double)session.getAttribute("amountDue");
-          Double payment=(Double)session.getAttribute("payment");
+          Double payment=(Double)session.getAttribute("balance");
           Double change =(Double)session.getAttribute("change");
         %>
         <p> Hi <%=name%> thank for choosing our service please see below your outcome</p>
@@ -26,16 +28,18 @@
                 <td><%=amountDue%></td>
             </tr>
             <tr>
-                <td>your payment is :</td>
+                <td>your balance :</td>
                 <td><%=payment%></td>
             </tr>
             
             <tr>
-                <td>your change is:</td>
+                <td>your reminder is:</td>
                 <td><%=change%></td>
             </tr>
-            
+        
         </table>
+        
             <p>please click <a href="StartBoookingServlet.do">here</a> if you want to continue booking services<br> or click <a href="summary.jsp">here</a></p> if you want stop booking</p>
-    </body>
+    </div>
+        </body>
 </html>

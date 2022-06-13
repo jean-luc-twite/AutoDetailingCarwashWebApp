@@ -9,37 +9,38 @@ and open the template in the editor.
         <title>Customer Login Page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet"  href="CustomerLog.css">
     </head>
     <body>
-        <div>
-            <h1>Login</h1>
-            <p>Hello ! please enter your details below</p>
+        <div class="container">
+          
+              
             <form action="LoginCustomerServlet.do" method="POST">
-                <table>
-                    <tr>
-                        <td>UserName or email</td>
-                        <td><input type="text" name ="name" placeholder=" Username or email "/></td>
-                    </tr>
+                  <h1 class="form__title">Login</h1>
+                
+                  
                     
-                    <tr>
-                        <td>Password</td>
-                        <td><input type="password" name ="pssword" placeholder=" password "/></td>
-                    </tr>
-                    
-                    <tr>
-                        <td></td>
-                        <td><input type="submit" value ="Login" placeholder=/></td>
-                    </tr>
-                </table>
+                  <div  class="form-input-group">
+                        <input class="form-input" type="text" name ="id" placeholder=" your ID number"/>
+                
+                      
+                        <input class="form-input" type="text" name ="name" placeholder=" Username or email "/>
+                  
+                        <input class="form-input" type="password" name ="pssword" placeholder=" password "/>
+                  
+                        <input class="form_button" type="submit" value ="LOGIN">
+                    </div>
+                
             </form>
-            <p>
-                <a href="">Forgot password?</a>
-            
+           <p class="form__text">
+                <a href="#" class="form__link">Forgot your password?</a>
             </p>
-            <p>
-                If you don't have an account Click <a href="createAcc.html">Sign in</a> to create an Account
+
+            <p class="form__text">
+                <a href="createAcc.html" class="form__link" id="linkCreateAccount">Don't have Account?Create Account</a>
             </p>
         </div>
-        
+   
+
     </body>
 </html>

@@ -11,18 +11,32 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <link rel="stylesheet"  href="packStyle.css">
         <title>Found packages  Page</title>
     </head>
     <body>
-        <h1>Found packages outcome</h1>
+        
         <%
           List<AutoDetailPackage> packages=(List<AutoDetailPackage>)session.getAttribute("packages");
           Long packagesId;
           String servicesNames;
           Double carsPrices,mid_small_suvPrices,large_suv_truckPrices;
+           int count=0;
         %>
-        <table>
-            <%
+        <div class="container">
+            
+                 <table class="content-table">
+                     <thead>
+                    <tr>
+                        <td>Number</td>
+                     <td>service Name</td>
+                     <td>normal cars price</td>
+                     <td>mid or small suv/van price</td>
+                      <td>large suv/van</td>
+                     
+                    </tr>
+                     </thead>
+                 <%
               for(int i=0;i < packages.size();i++){
                  AutoDetailPackage pakgs = packages.get(i);
                  packagesId=pakgs.getId();
@@ -30,49 +44,29 @@
                  carsPrices =pakgs.getNormal_cars_price();
                  mid_small_suvPrices=pakgs.getMid_small_suv_price();
                  large_suv_truckPrices =pakgs.getLarge_suv_or_truck_price();
+                 count++;
                  %>
-                 <tr>
-                     <td>service ID</td>
-                     <td><%=packagesId%></td>
-                 </tr>
+                     <tbody>
+                         <tr>
+                    <td><%=count%></td>
+                      <td><%=servicesNames%></td>
+                      <td><b>R<%=carsPrices%></b></td>
+                       <td><b>R<%=mid_small_suvPrices%></b></td>
+                        <td><b>R<%=large_suv_truckPrices%></b></td>
+                         </tr>
+                     </tbody>
                  
-                 <tr>
-                     <td>service Name</td>
-                     <td><%=servicesNames%></td>
-                 </tr>
-                 
-                 <tr>
-                     <td>normal cars price:</td>
-                     <td><%=carsPrices%></td>
-                 </tr>
-                 
-                 <tr>
-                     <td>mid or small suv/van price:</td>
-                     <td><%=mid_small_suvPrices%></td>
-                 </tr>
-                 
-                 <tr>
-                     <td>large suv/van:</td>
-                     <td><%=large_suv_truckPrices%></td>
-                 </tr>
                  <%
               }
             %>
         </table>
+        
         <p>
-            please  enter below the details of the package you want
+            Please  enter below the details of the package you want
         </p>
         <form action="ProcessServlet.do" method="POST">
-            <table>
-<!--                <tr>
-                    <td>the package id:<td>
-                    <td><input type="text" name="packId" placeholder="enter the id of the bpackage"/></td>
-                </tr>-->
-                <!--package name-->
-                <tr>
-                    <td>the package name:<td>
-                       <td>
-                           <select name="packsName">
+                     <div>
+                           <select name="packsName" class="form-input" required>
                                <option value="wash">Wash and Vacs</option>
                                <option value="exterior">exterior details</option>
                                <option value="interior">interior details</option>
@@ -80,30 +74,29 @@
                                <option value="complete_Acrylic">Acrylic Paint Sealant</option>
                               
                         </select>
-                       </td>
-                </tr>
+                   </div>
+                
                    <!--type of cars-->
-                   <tr>
-                       <td>cars type:</td>
-                       <td>
-                         <select name="carsTypes">
+                       <div>
+                           <select name="carsTypes" class="form-input" required>
                                <option value="cars">normal cars</option>
                                <option value="mid_small_suv_van">small or mid suv/van</option>
                                <option value="large_suv_truc">Large TRUCK/SUV/VAN</option>
                         </select>
-                       </td>
-                   </tr>
+                     </div>
                    
                    <tr>
-                       <td>cars quantity</td>
-                       <td><input type="text" name="quantity" placeholder="cars quantity"/></td>
+                       <td></td>
+                       <td><input class="form-input" type="number" name="quantity" placeholder="cars quantity"/></td>
                    </tr>
 
-                  <tr>
-                    <td><td>
-                    <td><input type="submit" value="submit"></td>
-                </tr>
-            </table>
+                  <div>
+                    
+                  <input class="button" type="submit" value="submit">
+                </div>
+        
         </form>
+        
+        </div>
     </body>
 </html>

@@ -64,6 +64,18 @@
         <servlet-name>RemoveCustsServlet</servlet-name>
         <servlet-class>za.ac.tut.web.RemoveCustsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>VerificationServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.VerificationServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addbankAccServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.addbankAccServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BankDetailsServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.BankDetailsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CreateServlet</servlet-name>
         <url-pattern>/CreateServlet.do</url-pattern>
@@ -127,6 +139,18 @@
     <servlet-mapping>
         <servlet-name>RemoveCustsServlet</servlet-name>
         <url-pattern>/RemoveCustsServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VerificationServlet</servlet-name>
+        <url-pattern>/VerificationServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addbankAccServlet</servlet-name>
+        <url-pattern>/addbankAccServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BankDetailsServlet</servlet-name>
+        <url-pattern>/BankDetailsServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

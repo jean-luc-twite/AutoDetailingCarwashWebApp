@@ -1,0 +1,74 @@
+body{
+    
+     margin: 0;
+     height: 100vh;
+     display:flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 18px;
+     background: url("car4.jpg");
+     background-size: cover;
+   
+
+}
+.main{
+    width: 400px;
+    max-width: 400px;
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 40px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background:#D3D3D3;
+}
+.main .navbar li{
+  margin-left: 1%;
+  -webkit-flow-into: 18px;
+  font-family:'cinzel',sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  border:1px solid rgba(255,255,255,0.5);
+  box-sizing: border-box;
+  box-shadow: 0px 0.5px 0px  rgba(0,0,0,0.5);
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 2px;
+  transition: 0.5s ease-in-out;
+}
+.main .navbar #btn1:hover{
+    background: #66ff00;
+    border:1px solid #66ff00;
+}
+.main .navbar #btn2:hover{
+    background: #FF160C;
+    border:1px solid #FF160C;
+}
+.main .navbar #btn3:hover{
+    background: #FFA500;
+    border:1px solid #FFA500;
+}
+.main .navbar #btn4:hover{
+    background: #FFFF00;
+    border:1px solid #FFFF00;
+}
+.main .navbar #btn5:hover{
+    background: #DCB190;
+    border:1px solid #DCB190;
+}
+.main .navbar #btn6:hover{
+    background: #BF40BF;
+    border:1px solid #BF40BF;
+}
+.main .navbar #btn8:hover{
+    background: #DCB190;
+    border:1px solid #DCB190;
+}
+.main .navbar #btn7:hover{
+    background: #ADD8E6;
+    border:1px solid #ADD8E6;
+}
+.main .navbar #btn9:hover{
+    background: darkblue;
+    border:1px solid #ADD8E6;
+}

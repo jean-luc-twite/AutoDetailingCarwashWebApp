@@ -6,18 +6,11 @@
 package za.ac.tut.web;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Date;
-import javax.ejb.EJB;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import za.ac.tut.business.CustomerFacadeLocal;
-import za.ac.tut.entities.Address;
-import za.ac.tut.entities.Customer;
 
 /**
  *
@@ -53,41 +46,15 @@ public class StartSessionServlet extends HttpServlet {
        String streetName=request.getParameter("streetName");
        String area=request.getParameter("area");
        String code=request.getParameter("code");
+       
        //initialise session
         initialiseSession(session,customerId,name,lastName,email,password,cellNum,streetNumber,streetName,area,code);
-       //generate
-     //  Customer custs=generate(customerId,name,lastName,email,password,cellNum,streetNumber,streetName,area,code);
-       //
-      
-       //customerFacade.createCustomers(custs);
-       //redirect the flow to the servlet that will stored user details into database
+
         response.sendRedirect("CreateUserAccountServlet.do");
-//      
-//       RequestDispatcher disp= request.getRequestDispatcher("CreateCustomerOutcome.jsp");
-//       disp.forward(request, response);
+
     }
 
-//    private Customer generate(Long customerId, String name, String lastName, String email, String password, String cellNum, String streetNumber, String streetName, String area, String code) {
-//        Address addrs=new Address();
-//        //
-//        addrs.setStreetNum(streetNumber);
-//        addrs.setStreetName(streetName);
-//        addrs.setArea(area);
-//        addrs.setCode(code);
-//        //
-//        Customer custs = new Customer();
-//        Date creationDate=new Date();
-//        custs.setId(customerId);
-//        custs.setName(name);
-//        custs.setLastName(lastName);
-//        custs.setEmail(email);
-//        custs.setPassword(password);
-//        custs.setCellPhone(cellNum);
-//        custs.setCreationDate(creationDate);
-//        custs.setAddrs(addrs);
-//        
-//        return custs;
-//    }
+
 
    private void initialiseSession(HttpSession session, Long customerId, String name, String lastName, String email, String password, String cellNum, String streetNumber, String streetName, String area, String code) {
     
@@ -106,6 +73,7 @@ public class StartSessionServlet extends HttpServlet {
      session.setAttribute("code", code);
      session.setAttribute("amountDue", amountDue);
      session.setAttribute("totalAmountDue", totalAmountDue);
+   
   }
 
 }

@@ -40,7 +40,7 @@ public class ProcessServlet extends HttpServlet {
         //
         HttpSession session=request.getSession();
        
-      // Long packsID=Long.parseLong(request.getParameter("packId"));
+//       Long packsID=Long.parseLong(request.getParameter("packId"));
        String serviceName=request.getParameter("packsName");
        String carsType=request.getParameter("carsTypes");
        Integer carsQty=Integer.parseInt(request.getParameter("quantity"));

@@ -9,25 +9,21 @@ and open the template in the editor.
         <title>Admin Login Page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"  href="AdminStyle.css">
     </head>
     <body>
-        <div>
-            <h1>Login</h1>
-            <p>Hello ! please enter your details below</p>
+        <div class="container">
+            <h1  class="form__title">Login</h1>
+            <p>Hello! please enter your details below</p>
             <form action="ManagerServlet.do" method="POST">
-                <table>
-                    
-                    <tr>
-                        <td>UserName or email</td>
-                        <td><input type="text" name ="name" placeholder=" Username or password "/></td>
-                    </tr>
-
-                    
-                    <tr>
-                        <td></td>
-                        <td><input type="submit" value ="Login"/></td>
-                    </tr>
-                </table>
+             
+                    <div class="form__input--group">
+                        <input class="form__input" type="text" name ="name" placeholder="name"/>
+                    </div>
+                    <div>  
+                        <input class="form_button"  type="submit" value ="Login"/>
+                    </div>
+               
             </form>
         </div>
         

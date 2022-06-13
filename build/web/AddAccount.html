@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Add Account page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div><h1>Add account</h1>
+            <form action="addbankAccServlet.do" method="POST">
+              
+                    <div class="form__input--group">  
+                        <input class="form_button"  type="text" name ="acctNumber" placeholder="enter account number"/>
+                    </div>
+                
+                    <div class="form__input--group">  
+                        <input class="form_button"  type="text" name ="accName" placeholder="enter account name"/>
+                    </div>
+                
+                    <div class="form__input--group">  
+                        <input class="form_button"  type="text" name ="balance" placeholder="enter balance"/>
+                    </div>
+                
+                   <div>  
+                        <input class="form_button"  type="submit" value ="ADD"/>
+                    </div>
+            </form>   
+        </div>
+    </body>
+</html>

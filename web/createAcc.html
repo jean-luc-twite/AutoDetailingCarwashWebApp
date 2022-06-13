@@ -9,67 +9,31 @@ and open the template in the editor.
         <title>Create Account Page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet"  href="CustomerLog.css">
     </head>
     <body>
-        <div>
-             <h1 class="form__title">Create Account</h1>
+        <div class="container">
+            
              <form action="CreateServlet.do"  method="POST">
-                 <table>
-                     <tr>
-                        <td>ID:</td>
-                        <td><input type="text" name="id" placeholder="enter customers Id"></td>
-                    </tr>
-                    
-                     <tr>
-                         <td>Name:</td>
-                         <td><input type="text"  name="name" placeholder="Name"></td>
-                     </tr>
-                     
-                     <tr>
-                         <td>Last Name:</td>
-                         <td><input type="text"   name="lastName"  placeholder="Last Name"></td>
-                     </tr>
-                     
-                     <tr>
-                         <td>Email:</td>
-                         <td><input type="text"  name="email"  placeholder="Email"></td>
-                     </tr>
-                     
-                      <tr>
-                         <td>password:</td>
-                         <td><input type="password"  name="passwd"  placeholder="password"></td>
-                     </tr>
-                     
-                      <tr>
-                        <td>cell number:</td>
-                        <td><input type="text" name="cellNum" placeholder="enter customers cell "></td>
-                    </tr>
-                    
-                     <tr>
-                        <td>street Number</td>
-                        <td><input type="text" name="streetNum" placeholder="enter customers street num"></td>
-                    </tr>
-                    
-                     <tr>
-                        <td>street name :</td>
-                        <td><input type="text" name="streetName" placeholder="enter customers street name"></td>
-                    </tr>
-                    <tr>
-                        <td>Area:</td>
-                        <td><input type="text" name="area" placeholder="enter customers Area"></td>
-                    </tr>
-                    
-                      <tr>
-                        <td>code:</td>
-                        <td><input type="text" name="code" placeholder="enter customers code"></td>
-                    </tr>
-                    
-                       <tr>
-                        <td></td>
-                        <td><input type="submit" value="CREATE"></td>
-                    </tr>
-                 </table>
+                 <h1 class="form__title">Register</h1>
+               
+                     <div  class="form-input-group">
+                         <input class="form-input" type="text" name="id" placeholder="customers Id" required="">                   
+                         <input class="form-input" type="text"  name="name" placeholder="Name" required="">                                     
+                         <input class="form-input" type="text"   name="lastName"  placeholder="Last Name" required>                    
+                         <input class="form-input" type="text"  name="email"  placeholder="Email" required>                                            
+                         <input class="form-input" type="password"  name="passwd"  placeholder="Password" required>                   
+                        <input class="form-input" type="text" name="cellNum" placeholder="cell">                  
+                        <input class="form-input" type="text" name="streetNum" placeholder="Street Number" required>
+                        <input class="form-input" type="text" name="streetName" placeholder="Street Name" required>
+                        <input class="form-input" type="text" name="area" placeholder="Area" required>
+                        <input class="form-input" type="text" name="code" placeholder="Code" required>
+                        <input class="form_button"  type="submit" value="CREATE">
+                    </div>
              </form>
+            <p class="form__text">
+              <a href="customerLogin.html" class="form__link" id="linklogin">already have an Account? Sign in</a>
+          </p>
         </div>
     </body>
 </html>

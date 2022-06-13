@@ -53,6 +53,7 @@ public class CreateUserAccountServlet extends HttpServlet {
        String streetName=(String)session.getAttribute("steetName");
        String area=(String)session.getAttribute("area");
        String code=(String)session.getAttribute("code");
+      
       //
       Customer customers=generate(customerId,name,lastName,email,password,cellNum,streetNumber,streetName,area,code);
       //
@@ -76,6 +77,7 @@ public class CreateUserAccountServlet extends HttpServlet {
         custs.setName(name);
         custs.setLastName(lastName);
         custs.setEmail(email);
+      
         custs.setPassword(password);
         custs.setCellPhone(cellNum);
         custs.setCreationDate(creationDate);

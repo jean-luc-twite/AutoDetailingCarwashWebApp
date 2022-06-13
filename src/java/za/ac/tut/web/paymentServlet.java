@@ -14,13 +14,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import za.ac.tut.business.CustomerFacadeLocal;
 import za.ac.tut.business.CustomerProcessLocal;
+import za.ac.tut.entities.Customer;
 
 /**
  *
  * @author Proline
  */
 public class paymentServlet extends HttpServlet {
+
+    @EJB
+    private CustomerFacadeLocal customerFacade;
 
     @EJB
     private CustomerProcessLocal customerProcess;
@@ -35,23 +40,11 @@ public class paymentServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //
-       HttpSession session = request.getSession();
-       //
-       double payment =Double.parseDouble(request.getParameter("payment"));
-       //get amounDue
-       Double amdue=(Double)session.getAttribute("amountDue");
-       //
-       String location="outcome.jsp";
-       //call and invoke determine payement
-      customerProcess.determinePayment(session,amdue, payment,location);
-      //the total amoun due
-      Double totalAmountDue=customerProcess.determineTotalAmountMade(session, amdue);
-      //
-      RequestDispatcher disp=request.getRequestDispatcher(location);
-      disp.forward(request, response);
+        //  
+      
+      response.sendRedirect("BankDetails.html");
       
     }
 

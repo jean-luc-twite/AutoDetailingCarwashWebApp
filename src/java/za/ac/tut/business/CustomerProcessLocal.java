@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 @Local
 public interface CustomerProcessLocal {
      Double determineAmountDue(HttpSession session,String serviceName,String carType,Integer qty);
-     void determinePayment(HttpSession session,Double amountDue,Double payement,String location);
+     void determinePayment(HttpSession session,Double amountDue,Double custBalance,String location);
      Double determineTotalAmountMade(HttpSession session,Double amountDue);
      Integer numberOfservices(HttpSession session); 
      //WASH AND VACS

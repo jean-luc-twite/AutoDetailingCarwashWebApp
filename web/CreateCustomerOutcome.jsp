@@ -10,7 +10,36 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Create Customer Page</title>
+         <link rel="stylesheet"  href="styleIndex.css"/>
     </head>
+<body>
+    <div class="main">
+        <video autoplay loop plays-inline id="video">
+            <source src="1.mp4" type ="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="navbar">
+           
+            <div class="navbar"> 
+                
+                <nav>
+                    <label class="logo">Code of Duty</label>
+               <ul>
+                   <li><a href="#">Home</a></li>
+                   <li><a href="#">Video</a></li>
+                   <li><a href="booking.html">Services</a></li>
+                    <li><a href="">Work</a></li>
+               </ul>
+                </nav>
+            </div>
+                
+        </div>
+
+                   
+            
+        </div>
+    </div>
+<!--    </head>
     <body>
         <h1>Customers Page</h1>
           <p>
@@ -22,6 +51,6 @@
               <li><a href="">Contact Us</a></li>
               <li><a href="">Work</a></li>
         </ul>
-        
+        -->
     </body>
 </html>

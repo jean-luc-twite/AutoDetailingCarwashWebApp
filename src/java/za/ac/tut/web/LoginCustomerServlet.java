@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import za.ac.tut.entities.Customer;
 
 /**
  *
@@ -35,16 +36,24 @@ public class LoginCustomerServlet extends HttpServlet {
         //
              HttpSession session=request.getSession();
           //
+            Long userId=Long.parseLong(request.getParameter("id"));
             String name=request.getParameter("name");
-            initialiseSession(session,name);
+            String password=request.getParameter("pssword");
+          
+           
+            initialiseSession(session,name,password,userId);
             //
           
-       RequestDispatcher disp= request.getRequestDispatcher("CreateCustomerOutcome.jsp");
-       disp.forward(request, response);
+           response.sendRedirect("VerificationServlet.do");
+       
     }
 
-    private void initialiseSession(HttpSession session,String name) {
+    private void initialiseSession(HttpSession session,String name,String password,Long userId) {
          session.setAttribute("name", name);
+         session.setAttribute("pssword", password);
+         session.setAttribute("id", userId);
+     
+        
     }
     
 }

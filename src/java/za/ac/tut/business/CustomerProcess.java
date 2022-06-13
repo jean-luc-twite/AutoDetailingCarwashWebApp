@@ -5,9 +5,11 @@
  */
 package za.ac.tut.business;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.servlet.http.HttpSession;
 import za.ac.tut.entities.AutoDetailPackage;
+import za.ac.tut.entities.Customer;
 
 /**
  *
@@ -15,6 +17,9 @@ import za.ac.tut.entities.AutoDetailPackage;
  */
 @Stateless
 public class CustomerProcess implements CustomerProcessLocal {
+
+    @EJB
+    private CustomerFacadeLocal customerFacade;
 
     @Override
     public Double determineAmountDue(HttpSession session,String packsName,String carsType,Integer qty) {
@@ -87,22 +92,21 @@ public class CustomerProcess implements CustomerProcessLocal {
     }
 
     @Override
-    public void determinePayment(HttpSession session,Double amountDue,Double payment,String location) {
-    
-       if(payment > amountDue){
+    public void determinePayment(HttpSession session,Double amountDue,Double custBalance,String location) {
+  
+       if(custBalance > amountDue){
            //determine the change
-           Double change = payment-amountDue;
+            Double change = custBalance-amountDue;
+           //edid balance
            session.setAttribute("change", change);
            location="outcome.jsp";
-        
-           
        }else{
-            location="invalid_Payement.jsp";
+           location="invalid_Payement.jsp";
            String invalidMessage="payment is invalid";
            session.setAttribute("invalid", invalidMessage);
            
        }
-       session.setAttribute("payment", payment);
+     
     }
 
     @Override

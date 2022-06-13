@@ -10,8 +10,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Summary Page</title>
+         <link rel="stylesheet"  href="summary.css"> 
     </head>
     <body>
+        <div class="container">
         <h1>Summary!</h1>
          <%
            String name=(String)session.getAttribute("name");
@@ -67,5 +69,6 @@
             </tr>
         </table>
             <p>please click <a href="StopSessionServlet.do">here</a> to end the session</p>
-    </body>
+        </div>
+        </body>
 </html>
